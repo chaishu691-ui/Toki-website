@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Contact — TOKI CONSULTING</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@300;400&family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+:root{--navy:#060A14;--n1:#0A0F1E;--n2:#0F1628;--n3:#151E34;--n4:#1C2640;--gold:#B8965A;--gl:#CCA96E;--gx:rgba(184,150,90,0.09);--gln:rgba(184,150,90,0.22);--ash:#4A5168;--fog:#7A8296;--mist:#A8AEBB;--snow:#ECEEF3;--rule:rgba(255,255,255,0.07);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--snow);font-family:'Noto Sans SC','Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}button{font-family:inherit;cursor:pointer;}
+.d{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-weight:300;line-height:1.08;letter-spacing:-.02em;}
+.eb{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;}.eb::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+.w{max-width:1200px;margin:0 auto;padding:0 64px;}.s{padding:100px 0;}
+.bp{background:var(--gold);color:var(--navy);padding:12px 28px;font-size:11px;letter-spacing:1.5px;font-weight:500;border:none;display:inline-block;cursor:pointer;transition:background .2s;}.bp:hover{background:var(--gl);}
+.bg{background:transparent;color:var(--mist);padding:12px 28px;font-size:11px;letter-spacing:1.5px;border:1px solid var(--rule);display:inline-block;cursor:pointer;transition:all .2s;}.bg:hover{border-color:var(--gln);color:var(--gold);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(6,10,20,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:border-color .4s;}nav.sc{border-bottom-color:var(--gln);}
+.nw{max-width:1200px;margin:0 auto;padding:0 64px;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nl{display:flex;flex-direction:column;gap:2px;}.nm{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;letter-spacing:7px;color:var(--gold);line-height:1;}.nt{font-size:8px;letter-spacing:3px;color:var(--ash);}
+.nlinks{display:flex;gap:22px;list-style:none;}.nlinks a{font-size:11px;letter-spacing:.7px;color:var(--fog);transition:color .2s;padding-bottom:2px;}.nlinks a:hover,.nlinks a.on{color:var(--gold);}.nlinks a.on{border-bottom:1px solid var(--gold);}
+.ncta{font-size:10px;letter-spacing:1.5px;padding:8px 20px;border:1px solid var(--gln);color:var(--gold);background:transparent;transition:all .2s;}.ncta:hover{background:var(--gx);}
+.nmob{display:none;background:none;border:none;color:var(--fog);font-size:18px;}
+footer{background:#040710;border-top:1px solid var(--rule);padding:64px 0 36px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.fm{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:6px;color:var(--gold);display:block;font-weight:300;margin-bottom:5px;}.fs{font-size:9px;letter-spacing:2px;color:var(--ash);margin-bottom:14px;display:block;}.fa{font-size:11px;color:var(--ash);line-height:1.8;max-width:230px;}
+.fc h5{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:400;}.fc ul{list-style:none;display:flex;flex-direction:column;gap:8px;}.fc a{font-size:11px;color:var(--ash);transition:color .2s;}.fc a:hover{color:var(--snow);}
+.fb{padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:flex-start;}.fcopy{font-size:10px;color:rgba(255,255,255,0.18);}.fdisc{font-size:9px;color:rgba(255,255,255,0.14);max-width:560px;line-height:1.7;}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease;}.rv.in{opacity:1;transform:translateY(0);}
+.ph{padding:160px 0 80px;background:var(--n2);border-bottom:1px solid var(--rule);}
+.phw{max-width:1200px;margin:0 auto;padding:0 64px;}
+.pk{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px;}.pk::before{content:'';width:24px;height:1px;background:var(--gold);}
+.ph1{font-size:clamp(40px,6vw,82px);font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.06;letter-spacing:-.025em;}.ph1 em{font-style:italic;color:var(--gold);}
+.psub{font-size:15px;color:var(--fog);max-width:520px;line-height:1.85;margin-top:20px;}
+@media(max-width:1024px){.w,.nw,.phw{padding-left:40px;padding-right:40px;}.fg{grid-template-columns:1fr 1fr;gap:36px;}}
+@media(max-width:768px){.w,.nw,.phw,.fg{padding-left:24px;padding-right:24px;}.nlinks{display:none;}.nmob{display:block;}.s{padding:64px 0;}.ph{padding-top:100px;padding-bottom:48px;}.fg{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+</style></head><body>
+<nav id="N"><div class="nw"><a href="index.html" class="nl" style="text-decoration:none"><span class="nm">TOKI</span><span class="nt">CONSULTING</span></a><ul class="nlinks"><li><a href="index.html">Home</a></li><li><a href="about.html" id="na-about">About</a></li><li><a href="consulting.html" id="na-consulting">Consulting</a></li><li><a href="ai.html" id="na-ai">TOKI AI</a></li><li><a href="tools.html" id="na-tools">Tools</a></li><li><a href="insights.html" id="na-insights">Insights</a></li><li><a href="contact.html" id="na-contact">Contact</a></li></ul><button class="ncta" onclick="location.href='contact.html'">预约咨询</button><button class="nmob" onclick="toggleNav()">☰</button></div></nav>
+<div class="ph"><div class="phw"><div class="pk">Contact</div><h1 class="ph1 d">Let's start<br>a <em>conversation.</em></h1><p class="psub">初步沟通免费，无义务。填写下方表单，或通过微信、LINE 直接联系我们。通常一个工作日内回复。</p></div></div>
+<section class="s" style="background:var(--navy)"><div class="w"><div style="display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:start">
+<div class="rv">
+<h2 style="font-size:20px;font-family:Cormorant Garamond,serif;font-weight:300;margin-bottom:8px">预约初步咨询</h2>
+<p style="font-size:12px;color:var(--ash);margin-bottom:28px;line-height:1.7">以下信息将帮助我们在联系前了解你的基本情况。所有信息严格保密，不与第三方共享。</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+<div><label style="font-size:10px;letter-spacing:1px;color:var(--ash);display:block;margin-bottom:6px">称呼 *</label><input id="fn" type="text" placeholder="你的称呼" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--snow);padding:11px 13px;font-size:13px;font-family:inherit;outline:none" onfocus="this.style.borderColor=var(--gold)" onblur="this.style.borderColor=var(--rule)"></div>
+<div><label style="font-size:10px;letter-spacing:1px;color:var(--ash);display:block;margin-bottom:6px">联系方式（微信 / LINE / 邮箱）*</label><input id="fc" type="text" placeholder="微信号 / LINE / 邮箱" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--snow);padding:11px 13px;font-size:13px;font-family:inherit;outline:none" onfocus="this.style.borderColor=var(--gold)" onblur="this.style.borderColor=var(--rule)"></div>
+</div>
+<div style="margin-bottom:14px"><label style="font-size:10px;letter-spacing:1px;color:var(--ash);display:block;margin-bottom:6px">咨询方向 *</label><select id="fs" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--snow);padding:11px 13px;font-size:13px;font-family:inherit;outline:none;appearance:none"><option value="">请选择最相关的方向</option><option>财富规划咨询</option><option>身份规划咨询</option><option>国际资源对接</option><option>企业与创业支持</option><option>TOKI AI 早期使用</option><option>暂不确定，想先了解</option></select></div>
+<div style="margin-bottom:14px"><label style="font-size:10px;letter-spacing:1px;color:var(--ash);display:block;margin-bottom:6px">希望咨询的核心问题（可选）</label><textarea placeholder="简单描述你目前最想解决的问题……" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--snow);padding:11px 13px;font-size:13px;font-family:inherit;outline:none;resize:vertical;min-height:100px" onfocus="this.style.borderColor=var(--gold)" onblur="this.style.borderColor=var(--rule)"></textarea></div>
+<p style="font-size:10px;color:var(--ash);margin-bottom:16px;line-height:1.7">提交即表示你同意 TOKI CONSULTING 使用以上信息与你联系。我们不会将信息用于营销目的，也不会与任何第三方共享。</p>
+<button onclick="doSubmit()" style="background:var(--gold);color:var(--navy);padding:12px 28px;font-size:11px;letter-spacing:1.5px;font-weight:500;border:none;cursor:pointer">提交预约申请</button>
+<div id="ok" style="display:none;background:rgba(107,174,136,0.08);border:1px solid rgba(107,174,136,0.25);padding:14px 18px;font-size:13px;color:#6BAE88;margin-top:14px">✓ 已收到你的申请。我们将在一个工作日内与你联系。</div>
+</div>
+<div class="rv">
+<div style="margin-bottom:28px"><div style="font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px">直接联系</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule)">
+<div style="background:var(--n1);padding:16px;text-align:center;cursor:pointer"><div style="font-size:20px;margin-bottom:6px">💬</div><div style="font-size:11px;font-weight:500">微信</div><div style="font-size:10px;color:var(--ash)">扫码添加</div></div>
+<div style="background:var(--n1);padding:16px;text-align:center;cursor:pointer"><div style="font-size:20px;margin-bottom:6px">🟢</div><div style="font-size:11px;font-weight:500">LINE</div><div style="font-size:10px;color:var(--ash)">@tokiconsulting</div></div>
+<div style="background:var(--n1);padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">📧</div><div style="font-size:11px;font-weight:500">邮件</div><div style="font-size:10px;color:var(--ash)">info@toki.jp</div></div>
+<div style="background:var(--n1);padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">📅</div><div style="font-size:11px;font-weight:500">预约通话</div><div style="font-size:10px;color:var(--ash)">提交表单后安排</div></div>
+</div></div>
+<div><div style="font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:10px">办公时间</div>
+<p style="font-size:12px;color:var(--fog);line-height:1.8">周一至周五 10:00–18:00 JST<br>东京 · 大阪 · 名古屋<br>线上咨询不受地域限制</p></div>
+<div style="background:rgba(184,150,90,0.05);border:1px solid var(--gln);padding:18px;margin-top:24px;font-size:11px;color:var(--ash);line-height:1.8"><strong style="color:var(--gold);font-weight:400">隐私说明</strong><br>你提供的所有信息严格保密，仅用于提供咨询服务。不用于营销目的，不与任何第三方共享。</div>
+</div></div></div></section>
+<footer><div class="w"><div class="fg"><div><span class="fm">TOKI</span><span class="fs">CONSULTING · Trust Is Wealth</span><p class="fa">精品咨询公司，帮助个人、家庭与企业应对财富、身份与未来规划中的重要决策。</p></div><div class="fc"><h5>Consulting</h5><ul><li><a href="consulting.html#wealth">财富规划</a></li><li><a href="consulting.html#life">身份规划</a></li><li><a href="consulting.html#global">国际资源</a></li><li><a href="consulting.html#business">企业支持</a></li></ul></div><div class="fc"><h5>Products</h5><ul><li><a href="ai.html">TOKI AI</a></li><li><a href="tools.html">Tools</a></li><li><a href="insights.html">Insights</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div><div class="fc"><h5>Contact</h5><ul><li><a href="contact.html">预约咨询</a></li><li><a href="#">WeChat</a></li><li><a href="#">LINE</a></li><li><a href="#">info@toki.jp</a></li></ul></div></div><div class="fb"><span class="fcopy">© 2024 TOKI CONSULTING. All rights reserved.</span><span class="fdisc">本网站内容仅供参考，不构成投资建议。TOKI CONSULTING 不持有金融商品取引业牌照，不提供投资建议或代客理财服务。</span></div></div></footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('N').classList.toggle('sc',scrollY>40);});
+document.querySelectorAll('.rv').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('in');},{threshold:.07}).observe(el);});
+function toggleNav(){const ul=document.querySelector('.nlinks');const o=ul.style.display==='flex';ul.style.cssText=o?'':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:#0A0F1E;padding:20px 24px;gap:14px;border-bottom:1px solid rgba(255,255,255,0.07);z-index:499;';}
+document.getElementById('na-contact')?.classList.add('on');
+function doFX(){const v=parseFloat(document.getElementById('fi')?.value);const o=document.getElementById('fo');if(!o)return;if(!v||v<=0){o.innerHTML='请输入有效金额。';o.style.display='block';return;}const r=0.0468;const c=(v*10000*r/10000).toFixed(2);const d10=(v*10000*r*.9/10000).toFixed(2);const d20=(v*10000*r*.8/10000).toFixed(2);o.innerHTML='当前参考：<strong style="color:var(--gold)">'+v+'万日元 ≈ '+c+'万人民币</strong><br>若再贬10%：约'+d10+'万 ｜ 再贬20%：约'+d20+'万';o.style.display='block';}
+function doSubmit(){const n=document.getElementById('fn')?.value?.trim();const c=document.getElementById('fc')?.value?.trim();const s=document.getElementById('fs')?.value;if(!n||!c||!s){alert('请填写必填项。');return;}const ok=document.getElementById('ok');if(ok){ok.style.display='block';}}
+</script>
+</body></html>

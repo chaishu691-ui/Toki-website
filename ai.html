@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TOKI AI — 交易辅助 AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@300;400&family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+:root{--navy:#060A14;--n1:#0A0F1E;--n2:#0F1628;--n3:#151E34;--n4:#1C2640;--gold:#B8965A;--gl:#CCA96E;--gx:rgba(184,150,90,0.09);--gln:rgba(184,150,90,0.22);--ash:#4A5168;--fog:#7A8296;--mist:#A8AEBB;--snow:#ECEEF3;--rule:rgba(255,255,255,0.07);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--snow);font-family:'Noto Sans SC','Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}button{font-family:inherit;cursor:pointer;}
+.d{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-weight:300;line-height:1.08;letter-spacing:-.02em;}
+.eb{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;}
+.eb::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+.w{max-width:1200px;margin:0 auto;padding:0 64px;}.s{padding:112px 0;}
+.bp{background:var(--gold);color:var(--navy);padding:12px 28px;font-size:11px;letter-spacing:1.5px;font-weight:500;border:none;transition:background .2s;display:inline-block;cursor:pointer;}.bp:hover{background:var(--gl);}
+.bg{background:transparent;color:var(--mist);padding:12px 28px;font-size:11px;letter-spacing:1.5px;border:1px solid var(--rule);transition:all .2s;display:inline-block;cursor:pointer;}.bg:hover{border-color:var(--gln);color:var(--gold);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(6,10,20,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:border-color .4s;}nav.sc{border-bottom-color:var(--gln);}
+.nw{max-width:1200px;margin:0 auto;padding:0 64px;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nl{display:flex;flex-direction:column;gap:2px;}.nm{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;letter-spacing:7px;color:var(--gold);line-height:1;}.nt{font-size:8px;letter-spacing:3px;color:var(--ash);}
+.nlinks{display:flex;gap:22px;list-style:none;}.nlinks a{font-size:11px;letter-spacing:.7px;color:var(--fog);transition:color .2s;padding-bottom:2px;}.nlinks a:hover,.nlinks a.on{color:var(--gold);}.nlinks a.on{border-bottom:1px solid var(--gold);}
+.ncta{font-size:10px;letter-spacing:1.5px;padding:8px 20px;border:1px solid var(--gln);color:var(--gold);background:transparent;transition:all .2s;}.ncta:hover{background:var(--gx);}
+.nmob{display:none;background:none;border:none;color:var(--fog);font-size:18px;}
+footer{background:#040710;border-top:1px solid var(--rule);padding:64px 0 36px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.fm{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:6px;color:var(--gold);display:block;font-weight:300;margin-bottom:5px;}.fs{font-size:9px;letter-spacing:2px;color:var(--ash);margin-bottom:14px;display:block;}.fa{font-size:11px;color:var(--ash);line-height:1.8;max-width:230px;}
+.fc h5{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:400;}.fc ul{list-style:none;display:flex;flex-direction:column;gap:8px;}.fc a{font-size:11px;color:var(--ash);transition:color .2s;}.fc a:hover{color:var(--snow);}
+.fb{padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:flex-start;}.fcopy{font-size:10px;color:rgba(255,255,255,0.18);}.fdisc{font-size:9px;color:rgba(255,255,255,0.14);max-width:560px;line-height:1.7;}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease;}.rv.in{opacity:1;transform:translateY(0);}
+
+/* PAGE HERO */
+.ph{padding:160px 0 80px;background:var(--n3);border-bottom:1px solid var(--rule);position:relative;overflow:hidden;}
+.ph::before{content:'AI';position:absolute;right:-20px;bottom:-40px;font-family:'Cormorant Garamond',serif;font-size:280px;font-weight:300;color:rgba(184,150,90,0.05);line-height:1;pointer-events:none;}
+.phw{max-width:1200px;margin:0 auto;padding:0 64px;position:relative;}
+.pk{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+.pk::before{content:'';width:24px;height:1px;background:var(--gold);}
+.ph1{font-size:clamp(40px,6vw,82px);font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.06;letter-spacing:-.025em;}
+.ph1 em{font-style:italic;color:var(--gold);}
+.psub{font-size:15px;color:var(--fog);max-width:520px;line-height:1.85;margin-top:20px;}
+.ph-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--gln);font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-top:20px;}
+
+/* WHAT IT DOES */
+#what{background:var(--navy);}
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px;}
+.wleft p{font-size:14px;color:var(--fog);line-height:1.9;margin-bottom:16px;}
+.cap-list{display:flex;flex-direction:column;gap:1px;margin-top:28px;}
+.cap{background:var(--n1);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;transition:background .2s;}
+.cap:hover{background:var(--n2);}
+.cap-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;margin-top:9px;flex-shrink:0;}
+.cap-title{font-size:13px;font-weight:500;margin-bottom:3px;}
+.cap-desc{font-size:12px;color:var(--fog);line-height:1.7;}
+.wright{}
+.ai-demo{background:var(--n2);border:1px solid var(--gln);padding:0;overflow:hidden;}
+.demo-header{background:var(--n3);padding:16px 20px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;}
+.demo-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+.demo-title{font-size:11px;color:var(--mist);letter-spacing:.5px;}
+.demo-body{padding:24px 20px;display:flex;flex-direction:column;gap:14px;}
+.dmsg{padding:12px 14px;max-width:82%;font-size:12px;line-height:1.7;}
+.dmsg.user{background:var(--n3);align-self:flex-end;color:var(--snow);}
+.dmsg.ai{background:rgba(184,150,90,0.07);border:1px solid var(--gln);align-self:flex-start;color:var(--fog);}
+.demo-footer{padding:14px 20px;border-top:1px solid var(--rule);font-size:10px;color:var(--ash);font-style:italic;}
+
+/* POSITIONING */
+#positioning{background:var(--n2);}
+.pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:48px;}
+.pos-card{background:var(--n1);padding:36px 32px;}
+.pos-label{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+.pos-list{display:flex;flex-direction:column;gap:8px;}
+.pos-item{font-size:13px;color:var(--fog);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;}
+.pos-item.yes::before{content:'✓';color:#6BAE88;flex-shrink:0;font-size:11px;}
+.pos-item.no::before{content:'×';color:rgba(184,150,90,0.4);flex-shrink:0;font-size:11px;}
+
+/* DISCLAIMER */
+.disc-box{background:rgba(184,150,90,0.05);border:1px solid var(--gln);padding:24px;margin-top:48px;font-size:12px;color:var(--fog);line-height:1.85;}
+.disc-box strong{color:var(--gold);font-weight:400;}
+
+@media(max-width:1024px){.w,.nw,.phw{padding-left:40px;padding-right:40px;}.fg{grid-template-columns:1fr 1fr;gap:36px;}.wg{grid-template-columns:1fr;gap:48px;}.pos-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.w,.nw,.phw,.fg{padding-left:24px;padding-right:24px;}.nlinks{display:none;}.nmob{display:block;}.s{padding:72px 0;}.ph{padding-top:100px;padding-bottom:48px;}.fg{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+<nav id="N">
+  <div class="nw">
+    <a href="index.html" class="nl" style="text-decoration:none"><span class="nm">TOKI</span><span class="nt">CONSULTING</span></a>
+    <ul class="nlinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="consulting.html">Consulting</a></li><li><a href="ai.html" class="on">TOKI AI</a></li><li><a href="tools.html">Tools</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <button class="ncta" onclick="location.href='contact.html'">预约咨询</button>
+    <button class="nmob" onclick="toggleNav()">☰</button>
+  </div>
+</nav>
+
+<div class="ph">
+  <div class="phw">
+    <div class="pk">TOKI AI · Second Growth Curve</div>
+    <h1 class="ph1 d">Your research,<br><em>amplified.</em></h1>
+    <p class="psub">交易辅助 AI，专为主动投资者设计。不预测点位，不保证收益——只帮你思考得更清晰、研究得更全面。</p>
+    <div class="ph-badge">独立产品线 · 非咨询服务</div>
+  </div>
+</div>
+
+<section id="what" class="s">
+  <div class="w">
+    <div class="eb rv">What TOKI AI Does</div>
+    <div class="wg">
+      <div class="wleft rv">
+        <p>TOKI AI 是我们的第二增长曲线——一款面向主动投资者的交易辅助工具。它的定位是延伸你的研究能力，而不是替代你的判断。</p>
+        <p>在信息爆炸的市场环境中，真正稀缺的不是数据，而是整理信息、构建分析框架、识别关键变量的能力。TOKI AI 专注于提升这个环节的效率。</p>
+        <div class="cap-list">
+          <div class="cap"><span class="cap-dot"></span><div><div class="cap-title">市场信息解读</div><div class="cap-desc">分析新闻事件与政策变化背后的深层逻辑，识别对特定资产类别的影响路径。</div></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><div class="cap-title">研究资料整理</div><div class="cap-desc">快速梳理多来源信息，构建结构化分析框架，提高研究覆盖的广度与深度。</div></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><div class="cap-title">交易思路构建</div><div class="cap-desc">帮助你从宏观环境、行业趋势到个股逻辑，建立完整的思维链条。</div></div></div>
+          <div class="cap"><span class="cap-dot"></span><div><div class="cap-title">潜在机会识别</div><div class="cap-desc">扫描跨市场、跨资产类别的信息，发现值得深入研究的方向。</div></div></div>
+        </div>
+        <br><a href="contact.html" class="bp" style="margin-top:16px">了解 TOKI AI 早期使用</a>
+      </div>
+      <div class="wright rv">
+        <div class="ai-demo">
+          <div class="demo-header"><span class="demo-dot"></span><span class="demo-title">TOKI AI · 研究助手</span></div>
+          <div class="demo-body">
+            <div class="dmsg user">日银今天宣布加息 0.25%，对我持有的日元现金有什么影响？</div>
+            <div class="dmsg ai">日银加息通常意味着日元有升值压力，对持有日元现金的人来说短期影响较为直接。<br><br>从几个维度来看：首先，加息幅度相对温和，市场已有一定预期。其次，真正影响日元走势的是加息路径预期，而非单次决策。<br><br>如果你有具体的资产配置情况，我可以帮你分析汇率敞口的结构。</div>
+            <div class="dmsg user">继续加息的概率有多大？</div>
+            <div class="dmsg ai">这需要关注几个关键变量：通胀数据的持续性、工资增长趋势、以及美联储政策方向的溢出效应……</div>
+          </div>
+          <div class="demo-footer">以上为功能演示，不构成投资建议。实际 AI 回答可能有所不同。</div>
+        </div>
+        <div class="disc-box" style="margin-top:20px">
+          <strong>重要说明</strong><br>
+          TOKI AI 是研究辅助工具，不提供投资建议，不构成任何买卖建议，不预测市场走势，不保证研究结论的准确性。所有输出内容仅供参考，投资决策由用户自行承担全部责任。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="positioning" class="s">
+  <div class="w">
+    <div class="eb rv">Positioning</div>
+    <h2 class="d rv" style="font-size:clamp(24px,3vw,40px);margin-top:14px;">TOKI AI 能做什么，不能做什么。</h2>
+    <div class="pos-grid">
+      <div class="pos-card rv">
+        <div class="pos-label">✓ 适合用 TOKI AI</div>
+        <div class="pos-list">
+          <div class="pos-item yes">解读市场新闻与政策的背景含义</div>
+          <div class="pos-item yes">整理研究资料，构建分析框架</div>
+          <div class="pos-item yes">了解宏观变量对资产类别的影响逻辑</div>
+          <div class="pos-item yes">快速理解金融术语与制度细节</div>
+          <div class="pos-item yes">梳理交易逻辑，识别潜在风险因素</div>
+          <div class="pos-item yes">提高研究效率，扩大覆盖广度</div>
+        </div>
+      </div>
+      <div class="pos-card rv">
+        <div class="pos-label">× 不适合用 TOKI AI</div>
+        <div class="pos-list">
+          <div class="pos-item no">获取具体买卖建议或时点建议</div>
+          <div class="pos-item no">预测市场点位或价格走势</div>
+          <div class="pos-item no">替代持牌投资顾问的专业判断</div>
+          <div class="pos-item no">处理税务申报或法律合规问题</div>
+          <div class="pos-item no">自动执行交易或管理账户</div>
+          <div class="pos-item no">任何需要法律效力的决策支持</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" style="background:var(--n3);padding:80px 0;text-align:center">
+  <div class="w">
+    <div class="eb rv" style="justify-content:center;margin-bottom:20px"><span style="width:20px;height:1px;background:var(--gold);display:inline-block"></span>&nbsp;&nbsp;Early Access&nbsp;&nbsp;<span style="width:20px;height:1px;background:var(--gold);display:inline-block"></span></div>
+    <h2 class="d rv" style="font-size:clamp(26px,3.2vw,44px);margin-bottom:14px;">TOKI AI 正在早期测试阶段。</h2>
+    <p class="rv" style="font-size:14px;color:var(--fog);max-width:440px;margin:0 auto 36px;line-height:1.85;">留下联系方式，优先获得早期使用权限。</p>
+    <a href="contact.html" class="bp rv">申请早期使用</a>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="fg"><div><span class="fm">TOKI</span><span class="fs">CONSULTING · Trust Is Wealth</span><p class="fa">精品咨询公司，帮助个人、家庭与企业应对财富、身份与未来规划中的重要决策。</p></div>
+    <div class="fc"><h5>Consulting</h5><ul><li><a href="consulting.html#wealth">财富规划</a></li><li><a href="consulting.html#life">身份规划</a></li><li><a href="consulting.html#global">国际资源</a></li><li><a href="consulting.html#business">企业支持</a></li></ul></div>
+    <div class="fc"><h5>Products</h5><ul><li><a href="ai.html">TOKI AI</a></li><li><a href="tools.html">Tools</a></li><li><a href="insights.html">Insights</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div>
+    <div class="fc"><h5>Contact</h5><ul><li><a href="contact.html">预约咨询</a></li><li><a href="#">WeChat</a></li><li><a href="#">LINE</a></li><li><a href="#">info@toki.jp</a></li></ul></div></div>
+    <div class="fb"><span class="fcopy">© 2024 TOKI CONSULTING. All rights reserved.</span><span class="fdisc">本网站内容仅供参考，不构成投资建议。TOKI AI 不提供投资建议，所有输出仅供参考。</span></div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('N').classList.toggle('sc',scrollY>40);});
+document.querySelectorAll('.rv').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('in');},{threshold:.07}).observe(el);});
+function toggleNav(){const ul=document.querySelector('.nlinks');const o=ul.style.display==='flex';ul.style.cssText=o?'':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:#0A0F1E;padding:20px 24px;gap:14px;border-bottom:1px solid rgba(255,255,255,0.07);z-index:499;';}
+</script>
+</body></html>

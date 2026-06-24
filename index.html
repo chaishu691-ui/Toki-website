@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TOKI CONSULTING — Trust Is Wealth</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@300;400&family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+:root{--navy:#060A14;--n1:#0A0F1E;--n2:#0F1628;--n3:#151E34;--n4:#1C2640;--gold:#B8965A;--gl:#CCA96E;--gx:rgba(184,150,90,0.09);--gln:rgba(184,150,90,0.22);--ash:#4A5168;--fog:#7A8296;--mist:#A8AEBB;--snow:#ECEEF3;--rule:rgba(255,255,255,0.07);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--snow);font-family:'Noto Sans SC','Inter',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}button{font-family:inherit;cursor:pointer;}
+.d{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-weight:300;line-height:1.08;letter-spacing:-.02em;}
+.eb{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;}
+.eb::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+.eb.c{justify-content:center;}.eb.c::before,.eb.c::after{content:'';width:20px;height:1px;background:var(--gold);}
+.w{max-width:1200px;margin:0 auto;padding:0 64px;}
+.s{padding:112px 0;}
+.bp{background:var(--gold);color:var(--navy);padding:12px 28px;font-size:11px;letter-spacing:1.5px;font-weight:500;border:none;transition:background .2s,transform .15s;display:inline-block;cursor:pointer;}
+.bp:hover{background:var(--gl);transform:translateY(-1px);}
+.bg{background:transparent;color:var(--mist);padding:12px 28px;font-size:11px;letter-spacing:1.5px;border:1px solid var(--rule);transition:all .2s;display:inline-block;cursor:pointer;}
+.bg:hover{border-color:var(--gln);color:var(--gold);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(6,10,20,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:border-color .4s;}
+nav.sc{border-bottom-color:var(--gln);}
+.nw{max-width:1200px;margin:0 auto;padding:0 64px;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nl{display:flex;flex-direction:column;gap:2px;}
+.nm{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;letter-spacing:7px;color:var(--gold);line-height:1;}
+.nt{font-size:8px;letter-spacing:3px;color:var(--ash);}
+.nlinks{display:flex;gap:22px;list-style:none;}
+.nlinks a{font-size:11px;letter-spacing:.7px;color:var(--fog);transition:color .2s;padding-bottom:2px;}
+.nlinks a:hover,.nlinks a.on{color:var(--gold);}
+.nlinks a.on{border-bottom:1px solid var(--gold);}
+.ncta{font-size:10px;letter-spacing:1.5px;padding:8px 20px;border:1px solid var(--gln);color:var(--gold);background:transparent;transition:all .2s;}
+.ncta:hover{background:var(--gx);}
+.nmob{display:none;background:none;border:none;color:var(--fog);font-size:18px;}
+footer{background:#040710;border-top:1px solid var(--rule);padding:64px 0 36px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.fm{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:6px;color:var(--gold);display:block;font-weight:300;margin-bottom:5px;}
+.fs{font-size:9px;letter-spacing:2px;color:var(--ash);margin-bottom:14px;display:block;}
+.fa{font-size:11px;color:var(--ash);line-height:1.8;max-width:230px;}
+.fc h5{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:400;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.fc a{font-size:11px;color:var(--ash);transition:color .2s;}
+.fc a:hover{color:var(--snow);}
+.fb{padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:flex-start;}
+.fcopy{font-size:10px;color:rgba(255,255,255,0.18);}
+.fdisc{font-size:9px;color:rgba(255,255,255,0.14);max-width:560px;line-height:1.7;}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease;}
+.rv.in{opacity:1;transform:translateY(0);}
+
+/* ═══ HERO ═══ */
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:88px;position:relative;overflow:hidden;}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 35%,rgba(184,150,90,0.055) 0%,transparent 65%),radial-gradient(ellipse 45% 50% at 10% 75%,rgba(184,150,90,0.03) 0%,transparent 55%);}
+.hline{position:absolute;top:62px;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(184,150,90,.11),rgba(184,150,90,.05) 65%,transparent);pointer-events:none;}
+.hline:nth-child(2){left:calc(50% - 180px);}
+.hline:nth-child(3){right:calc(50% - 180px);}
+.hi{position:relative;max-width:1200px;margin:0 auto;padding:0 64px;width:100%;}
+.hk{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:32px;opacity:0;animation:fu .8s .1s forwards;}
+.hk::before{content:'';width:24px;height:1px;background:var(--gold);}
+.h1{font-size:clamp(58px,9vw,124px);font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.02;letter-spacing:-.025em;opacity:0;animation:fu .9s .2s forwards;}
+.h1 em{font-style:italic;color:var(--gold);}
+.h1zh{font-size:clamp(16px,2vw,28px);font-family:'Noto Serif SC',serif;font-weight:300;color:var(--fog);letter-spacing:.08em;display:block;margin-top:14px;}
+.hdiv{width:100%;height:1px;background:var(--gln);margin:44px 0;opacity:0;animation:fi .6s .5s forwards;}
+.hfoot{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:center;opacity:0;animation:fu .8s .6s forwards;}
+.hdesc{font-size:14px;color:var(--fog);line-height:1.88;max-width:400px;}
+.hdesc strong{color:var(--snow);font-weight:400;display:block;margin-bottom:4px;font-size:15px;}
+.hacts{display:flex;gap:12px;flex-wrap:wrap;}
+.hscroll{font-size:9px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;display:flex;align-items:center;gap:10px;justify-self:end;}
+.hscrl{width:36px;height:1px;background:var(--ash);}
+
+/* strip */
+.strip{background:var(--n2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:11px 0;}
+.stripin{max-width:1200px;margin:0 auto;padding:0 64px;font-size:10px;color:var(--ash);display:flex;align-items:center;gap:10px;}
+.sdot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+/* ═══ BELIEVE ═══ */
+#believe{background:var(--n1);}
+.belg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.bels{font-size:clamp(26px,3.2vw,44px);font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.25;letter-spacing:-.01em;}
+.bels em{font-style:italic;color:var(--gold);}
+.belr p{font-size:14px;color:var(--fog);line-height:1.9;margin-bottom:16px;}
+
+/* ═══ CONSULTING ═══ */
+#consulting{background:var(--navy);}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:56px;}
+.cc{background:var(--n1);padding:40px 32px;transition:background .25s;position:relative;overflow:hidden;cursor:pointer;}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.cc:hover{background:var(--n2);}
+.cc:hover::after{transform:scaleX(1);}
+.ccn{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(184,150,90,.12);line-height:1;margin-bottom:20px;}
+.ccname{font-size:17px;font-family:'Cormorant Garamond',serif;font-weight:400;margin-bottom:10px;}
+.ccdesc{font-size:12px;color:var(--fog);line-height:1.8;margin-bottom:22px;}
+.cclink{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:7px;}
+.ccarr{transition:transform .2s;}
+.cc:hover .ccarr{transform:translateX(5px);}
+
+/* ═══ TOKI AI ═══ */
+#ai-sec{background:var(--n3);}
+.aig{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;}
+.ail{}
+.ais{font-size:clamp(26px,3.2vw,42px);font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.25;}
+.ais em{font-style:italic;color:var(--gold);}
+.aibody{font-size:14px;color:var(--fog);line-height:1.9;margin:20px 0;}
+.ai-caps{display:flex;flex-direction:column;gap:1px;}
+.ai-cap{background:var(--n2);padding:14px 18px;display:flex;align-items:flex-start;gap:12px;transition:background .2s;}
+.ai-cap:hover{background:var(--n4);}
+.ai-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.ai-ct{font-size:13px;color:var(--snow);line-height:1.6;}
+.airight{background:var(--n2);border:1px solid var(--gln);padding:36px;position:relative;overflow:hidden;}
+.airight::before{content:'AI';position:absolute;bottom:-10px;right:-5px;font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:300;color:rgba(184,150,90,0.06);line-height:1;pointer-events:none;}
+.airole{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+.aicard-t{font-size:22px;font-family:'Cormorant Garamond',serif;font-weight:300;margin-bottom:12px;}
+.aicard-d{font-size:13px;color:var(--fog);line-height:1.85;margin-bottom:24px;}
+.ai-disc{font-size:10px;color:var(--ash);line-height:1.6;padding:10px 12px;border-left:2px solid var(--gln);margin-top:16px;}
+
+/* ═══ TOOLS ═══ */
+#tools{background:var(--n1);}
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:48px;}
+.tc{background:var(--navy);padding:36px 28px;transition:background .25s;cursor:pointer;}
+.tc:hover{background:var(--n3);}
+.ttag{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:block;}
+.tname{font-size:20px;font-family:'Cormorant Garamond',serif;font-weight:300;margin-bottom:10px;}
+.tdesc{font-size:12px;color:var(--fog);line-height:1.8;margin-bottom:20px;}
+.tcta{font-size:10px;color:var(--gold);letter-spacing:1.2px;display:flex;align-items:center;gap:7px;}
+.tarr{transition:transform .2s;}
+.tc:hover .tarr{transform:translateX(5px);}
+
+/* ═══ INSIGHTS ═══ */
+#insights{background:var(--navy);}
+.ig{display:grid;grid-template-columns:2fr 1fr;gap:64px;margin-top:48px;}
+.ilist{display:flex;flex-direction:column;}
+.iitem{padding:20px 0;border-bottom:1px solid var(--rule);display:flex;gap:18px;cursor:pointer;transition:padding-left .2s;}
+.iitem:first-child{border-top:1px solid var(--rule);}
+.iitem:hover{padding-left:8px;}
+.inum{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--ash);min-width:20px;padding-top:3px;flex-shrink:0;}
+.imeta{font-size:9px;letter-spacing:1.5px;color:var(--gold);margin-bottom:5px;}
+.ititle{font-size:14px;color:var(--snow);line-height:1.5;margin-bottom:4px;font-weight:400;}
+.idesc{font-size:11px;color:var(--fog);line-height:1.6;}
+.iright{}
+.icard{background:var(--n1);border:1px solid var(--gln);padding:32px;position:sticky;top:80px;}
+.icard-eye{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.icard-t{font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.4;margin-bottom:10px;}
+.icard-d{font-size:11px;color:var(--fog);line-height:1.8;margin-bottom:20px;}
+.ilist2{margin-bottom:20px;}
+.ili{font-size:11px;color:var(--fog);padding:7px 0;border-bottom:1px solid var(--rule);display:flex;gap:8px;}
+.ili::before{content:'—';color:var(--gold);flex-shrink:0;}
+.iform{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
+.iin{background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--snow);padding:10px 12px;font-size:12px;font-family:inherit;outline:none;transition:border-color .2s;}
+.iin:focus{border-color:var(--gold);}
+.iin::placeholder{color:rgba(255,255,255,0.22);}
+
+/* ═══ CASES ═══ */
+#cases{background:var(--n2);}
+.caseg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:48px;}
+.casec{background:var(--n1);padding:38px 32px;transition:background .25s;}
+.casec:hover{background:var(--n3);}
+.casetag{font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;}
+.caseq{font-family:'Cormorant Garamond','Noto Serif SC',serif;font-size:16px;font-weight:300;font-style:italic;line-height:1.75;color:rgba(236,238,243,.82);margin-bottom:20px;padding-left:12px;border-left:1px solid var(--gln);}
+.casesh{font-size:11px;color:var(--fog);line-height:1.75;}
+.casesh strong{color:var(--mist);font-weight:500;display:block;margin-bottom:4px;}
+
+/* ═══ WHY ═══ */
+#why{background:var(--n1);}
+.whyg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:48px;}
+.whyc{background:var(--navy);padding:38px 30px;transition:background .25s;}
+.whyc:hover{background:var(--n3);}
+.whyw{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--gold);font-style:italic;margin-bottom:14px;}
+.whyt{font-size:14px;font-weight:500;margin-bottom:8px;}
+.whyd{font-size:12px;color:var(--fog);line-height:1.8;}
+
+/* ═══ FINAL CTA ═══ */
+#fcta{background:var(--n3);padding:120px 0;position:relative;overflow:hidden;}
+.fctabg{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(90px,16vw,200px);font-weight:300;color:rgba(184,150,90,0.04);letter-spacing:10px;pointer-events:none;white-space:nowrap;}
+.fctain{position:relative;text-align:center;}
+.fctah{font-size:clamp(32px,4.5vw,58px);font-family:'Cormorant Garamond',serif;font-weight:300;margin-top:18px;margin-bottom:14px;}
+.fctah em{font-style:italic;color:var(--gold);}
+.fctasub{font-size:14px;color:var(--fog);max-width:420px;margin:0 auto 44px;line-height:1.85;}
+.fctaacts{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fi{from{opacity:0;}to{opacity:1;}}
+@media(max-width:1024px){.w,.nw,.stripin{padding-left:40px;padding-right:40px;}.cg,.tg,.whyg{grid-template-columns:repeat(2,1fr);}.fg{grid-template-columns:1fr 1fr;gap:36px;}.aig{grid-template-columns:1fr;gap:40px;}}
+@media(max-width:768px){.w,.nw,.hi,.stripin,.fg{padding-left:24px;padding-right:24px;}.nlinks{display:none;}.nmob{display:block;}.s{padding:72px 0;}.h1{font-size:44px;}.hfoot{grid-template-columns:1fr;gap:20px;}.hscroll{display:none;}.belg,.ig{grid-template-columns:1fr;}.caseg,.whyg,.cg,.tg{grid-template-columns:1fr;}.iright{display:none;}.fg{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){.rv,.hk,.h1,.hdiv,.hfoot{animation:none;opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<nav id="N">
+  <div class="nw">
+    <a href="index.html" class="nl" style="text-decoration:none"><span class="nm">TOKI</span><span class="nt">CONSULTING</span></a>
+    <ul class="nlinks">
+      <li><a href="index.html" class="on">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="ai.html">TOKI AI</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="ncta" onclick="location.href='contact.html'">预约咨询</button>
+    <button class="nmob" onclick="toggleNav()">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="hline"></div><div class="hline"></div>
+  <div class="hi">
+    <div class="hk">Boutique Consulting · Tokyo · International</div>
+    <h1 class="h1 d">
+      Trust Is<br><em>Wealth.</em>
+      <span class="h1zh">信任就是财富</span>
+    </h1>
+    <div class="hdiv"></div>
+    <div class="hfoot">
+      <p class="hdesc">
+        <strong>TOKI CONSULTING</strong>
+        精品咨询公司，帮助个人、家庭与企业<br>应对财富、身份与未来规划中的重要决策。
+      </p>
+      <div class="hacts">
+        <a href="contact.html" class="bp">预约咨询</a>
+        <a href="about.html" class="bg">了解 TOKI</a>
+      </div>
+      <div class="hscroll"><span class="hscrl"></span>Scroll</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="stripin"><span class="sdot"></span>TOKI CONSULTING 不持有金融商品取引业牌照，不提供投资建议或代客理财服务。本网站内容仅供参考，不构成任何投资建议。</div></div>
+
+<!-- BELIEVE -->
+<section id="believe" class="s">
+  <div class="w">
+    <div class="eb rv">What We Believe</div>
+    <div class="belg">
+      <div class="bels d rv">
+        真正重要的，<br>不是拥有更多信息，<br>而是在复杂环境中<br>做出<em>更好的决策</em>。
+      </div>
+      <div class="rv">
+        <p>TOKI CONSULTING 是一家精品咨询公司。我们相信，在国际化生活与经营环境中，面对财富、身份与未来规划的每一个重要节点，拥有值得信赖的顾问，本身就是一种财富。</p>
+        <p>我们的服务不是信息，不是课程，不是工具——而是长期的顾问关系：帮助你在正确的时机，做出有依据的决策。</p>
+        <br><a href="about.html" class="bg">了解我们的理念 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTING -->
+<section id="consulting" class="s">
+  <div class="w">
+    <div class="eb rv">Consulting Services</div>
+    <h2 class="d rv" style="font-size:clamp(26px,3.2vw,42px);margin-top:16px;max-width:500px;">咨询服务，是 TOKI 的核心。</h2>
+    <div class="cg">
+      <a href="consulting.html#wealth" class="cc rv">
+        <div class="ccn">01</div>
+        <div class="ccname">财富规划咨询</div>
+        <div class="ccdesc">资产结构梳理、税务规划基础、跨境配置框架。帮助客户建立清晰的财富全局视图。</div>
+        <div class="cclink">了解详情 <span class="ccarr">→</span></div>
+      </a>
+      <a href="consulting.html#life" class="cc rv">
+        <div class="ccn">02</div>
+        <div class="ccname">身份规划咨询</div>
+        <div class="ccdesc">居留资质、签证策略、家庭安置规划。帮助个人与家庭在日本建立稳固的长期根基。</div>
+        <div class="cclink">了解详情 <span class="ccarr">→</span></div>
+      </a>
+      <a href="consulting.html#global" class="cc rv">
+        <div class="ccn">03</div>
+        <div class="ccname">国际资源对接</div>
+        <div class="ccdesc">持牌律师、税务士、金融机构推荐与协调。整合你所需要的专业力量。</div>
+        <div class="cclink">了解详情 <span class="ccarr">→</span></div>
+      </a>
+      <a href="consulting.html#business" class="cc rv">
+        <div class="ccn">04</div>
+        <div class="ccname">企业与创业支持</div>
+        <div class="ccdesc">在日设立架构、本地运营咨询、商业伙伴对接。支持国际化背景下的企业决策。</div>
+        <div class="cclink">了解详情 <span class="ccarr">→</span></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a href="consulting.html" class="bg">查看全部服务</a></div>
+  </div>
+</section>
+
+<!-- TOKI AI -->
+<section id="ai-sec" class="s">
+  <div class="w">
+    <div class="eb rv">TOKI AI</div>
+    <div class="aig">
+      <div class="ail">
+        <div class="ais d rv">交易辅助 AI，<br>延伸你的<em>研究能力</em>。</div>
+        <p class="aibody rv">TOKI AI 是我们的第二增长曲线——一款面向主动投资者的交易辅助工具。它不替你做决策，而是帮你更高效地处理信息、构建研究框架，让每一个交易思路都有更坚实的依据。</p>
+        <div class="ai-caps rv">
+          <div class="ai-cap"><span class="ai-dot"></span><span class="ai-ct">解读市场信息与新闻事件的深层背景</span></div>
+          <div class="ai-cap"><span class="ai-dot"></span><span class="ai-ct">整理研究资料，构建结构化分析框架</span></div>
+          <div class="ai-cap"><span class="ai-dot"></span><span class="ai-ct">发现潜在机会，提高研究覆盖效率</span></div>
+          <div class="ai-cap"><span class="ai-dot"></span><span class="ai-ct">快速理解宏观政策对特定资产的影响</span></div>
+        </div>
+        <br><a href="ai.html" class="bp rv" style="margin-top:12px">体验 TOKI AI</a>
+      </div>
+      <div class="airight rv">
+        <div class="airole">Second Growth Curve</div>
+        <div class="aicard-t d">TOKI AI</div>
+        <div class="aicard-d">专为主动投资者设计的交易辅助 AI。不预测点位，不保证收益，不自动下单——只帮你思考得更清晰、更全面。</div>
+        <a href="ai.html" class="bp" style="width:100%;text-align:center;display:block;padding:12px">开始使用 TOKI AI</a>
+        <div class="ai-disc">TOKI AI 不提供投资建议，不构成任何买卖建议。所有输出内容仅供研究参考，投资决策由用户自行承担。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="s">
+  <div class="w">
+    <div class="eb rv">TOKI Tools</div>
+    <h2 class="d rv" style="font-size:clamp(24px,3vw,40px);margin-top:14px;max-width:480px;">免费工具，帮你在咨询前建立认知。</h2>
+    <p class="rv" style="font-size:12px;color:var(--ash);font-style:italic;margin-top:8px">工具结果仅供参考，不构成投资建议。</p>
+    <div class="tg" style="margin-top:40px">
+      <a href="trader-dna.html" class="tc rv">
+        <span class="ttag">决策测评</span>
+        <div class="tname d">Trader DNA</div>
+        <div class="tdesc">了解你的决策模式与行为偏好，为咨询前的自我认知做准备。约 8 分钟。</div>
+        <div class="tcta">开始测评 <span class="tarr">→</span></div>
+      </a>
+      <a href="wealth-check.html" class="tc rv">
+        <span class="ttag">资产诊断</span>
+        <div class="tname d">财富体检</div>
+        <div class="tdesc">快速梳理资产结构现状，识别咨询中需要重点关注的领域。5 分钟。</div>
+        <div class="tcta">开始体检 <span class="tarr">→</span></div>
+      </a>
+      <a href="fx-tool.html" class="tc rv">
+        <span class="ttag">汇率工具</span>
+        <div class="tname d">汇率计算器</div>
+        <div class="tdesc">输入日元资产规模，了解汇率波动对实际购买力的影响区间。</div>
+        <div class="tcta">立即计算 <span class="tarr">→</span></div>
+      </a>
+      <a href="nisa-tool.html" class="tc rv">
+        <span class="ttag">参考模拟</span>
+        <div class="tname d">NISA 模拟器</div>
+        <div class="tdesc">新 NISA 制度下，不同投入规模与持有期限的免税效益对比参考。</div>
+        <div class="tcta">查看模拟 <span class="tarr">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="s">
+  <div class="w">
+    <div class="eb rv">TOKI Insights</div>
+    <h2 class="d rv" style="font-size:clamp(24px,3vw,40px);margin-top:14px;">写你真正需要读的内容。</h2>
+    <div class="ig">
+      <div>
+        <div class="ilist">
+          <a href="insights.html" class="iitem rv"><span class="inum">—</span><div><div class="imeta">税务规划 · 2024.12</div><div class="ititle">在日居留超过五年，你的海外资产如何进入日本税网</div><div class="idesc">永住者与非永住者的税务边界，以及常见误判场景梳理。</div></div></a>
+          <a href="insights.html" class="iitem rv"><span class="inum">—</span><div><div class="imeta">制度解读 · 2024.11</div><div class="ititle">新 NISA 2024：你需要重新理解的几个关键细节</div><div class="idesc">成长投资枠与积立投资枠的协同逻辑，以及与境外账户的关系。</div></div></a>
+          <a href="insights.html" class="iitem rv"><span class="inum">—</span><div><div class="imeta">汇率分析 · 2024.10</div><div class="ititle">日元政策转向的观察框架：如何建立自己的判断依据</div><div class="idesc">不预测点位，只梳理影响日银政策的核心变量。</div></div></a>
+          <a href="insights.html" class="iitem rv"><span class="inum">—</span><div><div class="imeta">AI应用 · 2024.09</div><div class="ititle">交易辅助 AI 能做什么，不能做什么</div><div class="idesc">厘清 AI 在投资研究中的真实价值边界。</div></div></a>
+        </div>
+        <div style="margin-top:28px"><a href="insights.html" class="bg">查看全部 Insights →</a></div>
+      </div>
+      <div class="iright">
+        <div class="icard rv">
+          <div class="icard-eye">免费下载</div>
+          <div class="icard-t d">2024 财富规划<br>参考手册</div>
+          <div class="icard-d">税务基础、NISA 要点、跨境资产常见误区，以及值得了解的制度细节。</div>
+          <div class="ilist2">
+            <div class="ili">日本税务体系适用说明</div>
+            <div class="ili">新 NISA 结构图解与要点</div>
+            <div class="ili">跨境资产申报义务速查</div>
+            <div class="ili">常见认知误区 15 条</div>
+          </div>
+          <div class="iform">
+            <input class="iin" type="text" placeholder="你的称呼">
+            <input class="iin" type="text" placeholder="微信号 / 邮箱">
+          </div>
+          <button class="bp" style="width:100%;font-size:11px">免费获取手册</button>
+          <p style="font-size:9px;color:var(--ash);text-align:center;margin-top:8px">仅用于发送文件，不加推广群</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="s">
+  <div class="w">
+    <div class="eb rv">Case Studies</div>
+    <h2 class="d rv" style="font-size:clamp(24px,3vw,40px);margin-top:14px;">不谈回报率，只谈决策质量。</h2>
+    <div class="caseg">
+      <div class="casec rv">
+        <div class="casetag">财富规划 · 个人</div>
+        <div class="caseq">"八年在日经历，第一次系统看清自己的资产结构——才发现原来有这么多认知盲区。"</div>
+        <div class="casesh"><strong>决策改变</strong>建立跨境资产全景图，处理境外账户申报合规问题，制定可执行的 NISA 使用计划。</div>
+      </div>
+      <div class="casec rv">
+        <div class="casetag">身份规划 · 家庭</div>
+        <div class="caseq">"永住申请的最佳时机差点因为信息不足而错过，幸好在关键节点前做了系统梳理。"</div>
+        <div class="casesh"><strong>决策改变</strong>识别三个月申请窗口，协调行政书士完成材料准备，避免因职业变化导致的时机延误。</div>
+      </div>
+      <div class="casec rv">
+        <div class="casetag">企业支持 · 创业</div>
+        <div class="caseq">"从不知道从哪里开始，到清晰的落地路径——在日设立公司比想象中要复杂，也比想象中更可控。"</div>
+        <div class="casesh"><strong>决策改变</strong>评估架构选项，协调司法书士落地，整体设立周期缩短约六周。</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px"><a href="case-studies.html" class="bg">查看完整案例</a></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="s">
+  <div class="w">
+    <div class="eb rv">Why TOKI</div>
+    <h2 class="d rv" style="font-size:clamp(24px,3vw,40px);margin-top:14px;">选择顾问，本质上是一次信任决策。</h2>
+    <div class="whyg" style="margin-top:48px">
+      <div class="whyc rv"><div class="whyw">Trust</div><div class="whyt">独立立场</div><div class="whyd">不销售金融产品，不收推介佣金。立场与你的利益完全一致。</div></div>
+      <div class="whyc rv"><div class="whyw">Long-term</div><div class="whyt">长期陪伴</div><div class="whyd">咨询不是一次性交付，而是随客户生命阶段动态演进的顾问关系。</div></div>
+      <div class="whyc rv"><div class="whyw">Global</div><div class="whyt">国际视野</div><div class="whyd">跨越语言、文化与制度边界，为国际化背景的客户提供整合支持。</div></div>
+      <div class="whyc rv"><div class="whyw">Network</div><div class="whyt">专业网络</div><div class="whyd">TOKI 的价值不仅在于自身能力，更在于连接优质专业资源的能力。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="fcta">
+  <div class="fctabg">TRUST</div>
+  <div class="w">
+    <div class="fctain">
+      <div class="eb c rv">Ready to Begin</div>
+      <h2 class="fctah d rv">每一个重要决策，<br>都值得<em>认真准备</em>。</h2>
+      <p class="fctasub rv">初步咨询免费，无义务。告诉我们你的处境，我们来判断能否帮上忙。</p>
+      <div class="fctaacts rv">
+        <a href="contact.html" class="bp">预约免费初步咨询</a>
+        <a href="consulting.html" class="bg">了解全部服务</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="fg">
+      <div><span class="fm">TOKI</span><span class="fs">CONSULTING · Trust Is Wealth · 信任就是财富</span><p class="fa">精品咨询公司，帮助个人、家庭与企业应对财富、身份与未来规划中的重要决策。</p></div>
+      <div class="fc"><h5>Consulting</h5><ul><li><a href="consulting.html#wealth">财富规划</a></li><li><a href="consulting.html#life">身份规划</a></li><li><a href="consulting.html#global">国际资源</a></li><li><a href="consulting.html#business">企业支持</a></li></ul></div>
+      <div class="fc"><h5>Products</h5><ul><li><a href="ai.html">TOKI AI</a></li><li><a href="tools.html">Tools</a></li><li><a href="insights.html">Insights</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></div>
+      <div class="fc"><h5>Contact</h5><ul><li><a href="contact.html">预约咨询</a></li><li><a href="#">WeChat</a></li><li><a href="#">LINE</a></li><li><a href="#">info@toki.jp</a></li></ul></div>
+    </div>
+    <div class="fb"><span class="fcopy">© 2024 TOKI CONSULTING. All rights reserved.</span><span class="fdisc">本网站内容仅供参考，不构成投资建议。TOKI CONSULTING 不持有金融商品取引业牌照，不提供投资建议或代客理财服务。</span></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('N').classList.toggle('sc',scrollY>40);});
+document.querySelectorAll('.rv').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('in');},{threshold:.07}).observe(el);});
+function toggleNav(){const ul=document.querySelector('.nlinks');const o=ul.style.display==='flex';ul.style.cssText=o?'':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:#0A0F1E;padding:20px 24px;gap:14px;border-bottom:1px solid rgba(255,255,255,0.07);z-index:499;';}
+</script>
+</body></html>
